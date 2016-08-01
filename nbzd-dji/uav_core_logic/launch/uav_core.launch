@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--2016.8.1 18:41-->
+<launch>
+
+<!--read video from camera-->
+	<node  name="webCameraRead" pkg="read_cam" type="webCameraRead"/>
+
+<!--detect Doll & Marker -->
+	<!--<node name="detecDoll" pkg="uav_vision" type = "detecDoll"/>-->
+	<node name="detecMarker" pkg="uav_vision" type = "detecMarker"/>
+<!--Onboard SDK-->
+<!--get permission --> 
+	<include file = "$(find dji_sdk)/launch/sdk_manifold.launch" />
+
+<!--control M100  -->
+	<include file = "$(find dji_sdk_demo)/launch/dji_sdk_client.launch" />
+
+<!--guidance node-->
+	<node  name="guidanceNode" pkg="guidance" type="guidanceNode"/>
+
+<!--
+=================================================
+app id: 1030350
+app version: 0x03010A00
+app key: 4223c112f956f3498e773be076887ef4a8e75b0b7b07f247a86691ecab783011
+-->
+
+
+</launch>
+

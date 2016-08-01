@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+	<node  name="talker" pkg="mytest" type="talker" output = "screen">
+	<param name = " param_test" type = "double" value = "596.6" />
+	</node>
+	</launch>
